@@ -57,7 +57,7 @@
                                                 <label class="custom-control-label" for="customCheck">Recordarme</label>
                                             </div>
                                         </div>
-                                        <a href="main.html" class="btn btn-primary btn-user btn-block">
+                                        <a onclick="llamarServicio(document.getElementById('exampleInputEmail').value,document.getElementById('exampleInputPassword').value);" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                         <hr>
@@ -100,3 +100,30 @@
 </body>
 
 </html>
+
+<script>
+      function llamarServicio(usuarioLocal, passwordLocal) {
+        fetch('http://localhost:10000/corpocaldas/api/iniciarSesion', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            //usuario: 'juan.perez@miempresa.com',
+            //password: 'mypassword'
+            usuario: usuarioLocal,
+            password: passwordLocal
+          })
+        })
+          .then(response => response.json())
+          .then(data => {
+            const count = data[0].count;
+            if (count === "1") {
+              window.location.href = "main.html";
+            }else{
+                alert("Datos incorrectos!");
+            }
+          })
+          .catch(error => console.error(error));
+      }
+    </script>
