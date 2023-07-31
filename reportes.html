@@ -1,55 +1,3 @@
-<style>
-    .card-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .form-label {
-        font-weight: bold;
-        color: #333;
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 8px;
-    }
-
-    .form-input {
-        width: 100%;
-        max-width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 14px;
-        margin-bottom: 16px;
-    }
-
-    .form-select {
-        width: 100%;
-        max-width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 14px;
-        background-color: #f7f7f7;
-        margin-bottom: 16px;
-    }
-
-    .form-submit {
-        padding: 10px 20px;
-        background-color: #4caf50;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    .form-submit:hover {
-        background-color: #45a049;
-    }
-</style>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,16 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Corpocaldas</title>
+    <title>Reportes</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -190,9 +141,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
                     <form
@@ -394,110 +347,44 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <br>
-                    <h1 class="h3 mb-1 text-gray-800">Gestion Conductor</h1>
-                    <br><br>
-                    <p class="mb-4" align="justify">Bienvenido al formulario de registro de datos del conductor. Este formulario está diseñado para recopilar información importante sobre los conductores con el fin de mantener un registro actualizado y preciso. Entendemos la importancia de contar con datos precisos y completos para garantizar la seguridad y el cumplimiento de las normas de tránsito. Por favor, complete todos los campos requeridos de manera cuidadosa y precisa, ya que esta información será utilizada de manera confidencial y solo con fines legítimos. Agradecemos su colaboración y compromiso con la seguridad vial.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Reportes</h1>
+                    <p class="mb-4">
+Bienvenido al módulo de reportes de servicios de solicitudes de vehículos. En el mundo de la gestión de flotas, la generación de informes efectivos es esencial para evaluar y optimizar el rendimiento de los servicios de solicitud de vehículos. Este módulo ha sido diseñado para ofrecerte una amplia gama de herramientas y funcionalidades que te permitirán obtener una visión completa y detallada de tus operaciones de transporte. Desde la recopilación y análisis de datos hasta la generación de informes claros y concisos, este módulo te brindará las herramientas necesarias para tomar decisiones informadas y mejorar la eficiencia de tu flota de vehículos. ¡Prepárate para descubrir un nuevo nivel de control y análisis en tus servicios de solicitudes de vehículos!</p>
 
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Grow In Utility -->
-                        <div class="col-lg-6">
-
-                            <div class="card position-relative">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Datos del Conductor:</h6>
-                                </div>
-                                <div class="card-body">
-                                    <form>
-        <label class="form-label" for="nombre">Nombre del conductor</label>
-        <input class="form-input" type="text" id="nombre" name="nombre" required>
-
-        <label class="form-label" for="apellido">Apellido del conductor</label>
-        <input class="form-input" type="text" id="apellido" name="apellido" required>
-
-        <label class="form-label" for="tipoDocumento">Tipo de documento</label>
-        <input class="form-input" type="text" id="tipoDocumento" name="tipoDocumento" required>
-
-        <label class="form-label" for="numeroDocumento">Número de documento</label>
-        <input class="form-input" type="text" id="numeroDocumento" name="numeroDocumento" required>
-
-        <label class="form-label" for="telefono">Número de teléfono</label>
-        <input class="form-input" type="text" id="telefono" name="telefono" required>
-
-        <label class="form-label" for="direccion">Dirección de residencia</label>
-        <input class="form-input" type="text" id="direccion" name="direccion" required>
-
-        <label class="form-label" for="ciudad">Ciudad de residencia</label>
-        <input class="form-input" type="text" id="ciudad" name="ciudad" required>
-
-        <label class="form-label" for="correo">Correo electrónico</label>
-        <input class="form-input" type="email" id="correo" name="correo" required>
-
-        <label class="form-label" for="genero">Género</label>
-        <select class="form-select" id="genero" name="genero" required>
-            <option value="" selected disabled>Seleccione</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-        </select>
-
-        
-
-                <input type='button'  onclick='llamarServicio();' value='Guardar' class='form-submit'>
-
-</form>
-
-                                </div>
-
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Servicios de transporte aprobados</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" width="100%" cellspacing="0" id="tablaSolicitudes">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Cédula ID</th>
+                                            <th>Fecha de Registro</th>
+                                            <th>Fecha de Solicitud</th>
+                                            <th>Fecha de Inicio</th>
+                                            <th>Fecha de Fin</th>
+                                            <th>Hora de Salida</th>
+                                            <th>Hora de Regreso</th>
+                                            <th>Destino</th>
+                                            <th>Objeto</th>
+                                            <th>Zona ID</th>
+                                            <th>Estado</th>
+                                            <th>Vehículo ID</th>
+                                            <th>Conductor ID</th>
+                                            <th>Fecha de Retorno</th>
+                                            <th>Hora de Salida 2</th>
+                                            <th>ID de Estado</th>
+                                            <th>Fecha de Asignación de Estado</th>
+                                        </tr>
+                                    </thead>                                    
+                                    <tbody></tbody>
+                                </table>
                             </div>
-
                         </div>
-
-                        <!-- Fade In Utility -->
-                        <div class="col-lg-6">
-
-                            <div class="card position-relative">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Datos Adicionales:</h6>
-                                </div>
-                                <div class="card-body">
-                                    
-                                    <form>
-                                        <label class="form-label" for="condicion">Condición</label>
-        <select class="form-select" id="condicion" name="condicion" required>
-            <option value="" selected disabled>Seleccione</option>
-            <option value="1">Propietario</option>
-            <option value="1">Conductor</option>
-        </select>
-
-        <label class="form-label" for="eps">EPS</label>
-        <input class="form-input" type="text" id="eps" name="eps" required>
-
-        <label class="form-label" for="arl">ARL</label>
-        <input class="form-input" type="text" id="arl" name="arl" required>
-        <label class="form-label" for="nombreJefe">Nombre del jefe inmediato</label>
-        <input class="form-input" type="text" id="nombreJefe" name="nombreJefe" required>
-
-        <label class="form-label" for="numeroLicencia">Número de licencia de conducción</label>
-        <input class="form-input" type="text" id="numeroLicencia" name="numeroLicencia" required>
-
-        <label class="form-label" for="vigenciaLicencia">Vigencia de la licencia</label>
-        <input class="form-input" type="date" id="vigenciaLicencia" name="vigenciaLicencia" required>
-
-        <label class="form-label" for="categoriaLicencia">Categoría de la licencia</label>
-        <input class="form-input" type="text" id="categoriaLicencia" name="categoriaLicencia" required>
-
-        <label class="form-label" for="adjuntarArchivos">Adjuntar archivos</label>
-        <input class="form-input" type="file" id="adjuntarArchivos" name="adjuntarArchivos" accept=".doc,.docx,.pdf">
-
-</form>
-
-
-                                </div>
-
-                        </div>
-
                     </div>
 
                 </div>
@@ -557,74 +444,50 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
 </body>
 
 </html>
 
-<script>
-      function llamarServicio() {
-        fetch('http://localhost:10000/corpocaldas/api/conductor/registrarConductor', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-                /*
-              'foto': 'imagen_vehiculo.jpg',
-              'placa': '123',
-              'modelo': '2022',
-              'marca': 'Chevrolet',
-              'numero_lateral': '1234',
-              'clase': 'camioneta',
-              'cilindraje': '2000',
-              'matricula': '123',
-              'propietario': 'Juan Pérez',
-              'num_pasajeros': '4',
-              'vigencia_poliza': '2023-12-31',
-              'vigencia_soat': '2023-06-30',
-              'vigencia_revision': '2023-09-15',
-              'empresa_afiliada': 'Transporte S.A.',
-              'estado_vehiculo': 'activo',
-              'nombre_conductor': 'Pedro Gómez',
-              'cedula_conductor': '123456789',
-              'adjuntar_archivos': 'documentos_vehiculo.pdf'
-              */
 
+<script type="text/javascript">
+    
+function obtenerSolicitudes() {
+  fetch('http://localhost:10000/corpocaldas/api/solicitud/listarSolicitudes')
+    .then(response => response.json())
+    .then(data => {
+      // Obtener la referencia a la tabla
+      const tabla = document.getElementById('tablaSolicitudes');
 
-              'nombre' : document.getElementById('nombre').value,
-              'apellido' : document.getElementById('apellido').value,
-              'tipoDocumento' : document.getElementById('tipoDocumento').value,
-              'numeroDocumento' : document.getElementById('numeroDocumento').value,
-              'telefono' : document.getElementById('telefono').value,
-              'direccion' : document.getElementById('direccion').value,
-              'ciudad' : document.getElementById('ciudad').value,
-              'correo' : document.getElementById('correo').value,
-              'genero' : document.getElementById('genero').value,
-              'condicion' : document.getElementById('condicion').value,
-              'eps' : document.getElementById('eps').value,
-              'arl' : document.getElementById('arl').value,
-              'nombreJefe' : document.getElementById('nombreJefe').value,
-              'numeroLicencia' : document.getElementById('numeroLicencia').value,
-              'vigenciaLicencia' : document.getElementById('vigenciaLicencia').value,
-              'categoriaLicencia' : document.getElementById('categoriaLicencia').value,
-              'adjuntarArchivos' : document.getElementById('adjuntarArchivos').value
+      // Crear las filas de la tabla
+      data.forEach(solicitud => {
+        const fila = document.createElement('tr');
 
+        // Iterar sobre las propiedades de la solicitud y crear las celdas correspondientes
+        for (const prop in solicitud) {
+          if (solicitud.hasOwnProperty(prop)) {
+            const celda = document.createElement('td');
+            celda.textContent = solicitud[prop];
+            fila.appendChild(celda);
+          }
+        }
 
+        // Agregar la fila a la tabla
+        tabla.appendChild(fila);
+      });
+    })
+    .catch(error => {
+      console.error('Error al obtener las solicitudes:', error);
+    });
+}
 
-          })
-        })
-          .then(response => response.json())
-          .then(data => {
-            const resultado = data.Resultado; // Obtén el valor de la propiedad "Resultado" de la respuesta
+obtenerSolicitudes();
 
-            if (resultado === 'OK') {
-              alert('REGISTRO REALIZADO CORRECTAMENTE');
-              window.location.href = 'gestion_conductor.html'; // Redirige a main.html si es necesario
-            } else {
-              alert('Datos incorrectos!');
-            }
-          })
-          .catch(error => console.error(error));
-      }
 
 </script>
